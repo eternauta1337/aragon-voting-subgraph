@@ -2,13 +2,13 @@
   "name": "aragon-voting",
   "version": "0.1.0",
   "scripts": {
-    "build-contract": "solc contracts/Gravity.sol --abi -o abis --overwrite && solc contracts/Gravity.sol --bin -o bin --overwrite",
-    "create": "graph create ajstantander/aragon-voting --node https://api.thegraph.com/deploy/",
-    "create-local": "graph create ajstantander/aragon-voting --node http://127.0.0.1:8020",
-    "codegen": "graph codegen",
+    "build-manifest": "scripts/build-manifest.sh rinkeby",
+    "create": "graph create ajsantander/aragon-voting --node https://api.thegraph.com/deploy/",
+    "create-local": "graph create ajsantander/aragon-voting --node http://127.0.0.1:8020",
+    "codegen": "rm -rf generated; graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy ajstantander/aragon-voting --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
-    "deploy-local": "graph deploy ajstantander/aragon-voting --ipfs http://localhost:5001 --node http://127.0.0.1:8020"
+    "deploy": "graph deploy ajsantander/aragon-voting --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ --access-token $GRAPHKEY",
+    "deploy-local": "graph deploy ajsantander/aragon-voting --ipfs http://localhost:5001 --node http://127.0.0.1:8020"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.18.0",
@@ -17,6 +17,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "babel-register": "^6.26.0",
+    "mustache": "^4.0.1",
     "truffle": "^5.0.4",
     "truffle-contract": "^4.0.5",
     "truffle-hdwallet-provider": "^1.0.4"

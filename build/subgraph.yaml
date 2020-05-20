@@ -2,13 +2,13 @@ specVersion: 0.0.2
 description: Subgraph template for aragon apps.
 repository: https://github.com/aragon/app-subgraph
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: DAOFactory
     network: rinkeby
     source:
-      address: '0x89d87269527495ac29648376d4154ba55c4872fc'
+      address: "0x89d87269527495ac29648376d4154ba55c4872fc"
       abi: DAOFactory
       startBlock: 5922866
     mapping:
@@ -19,16 +19,16 @@ dataSources:
         - Dummy
       abis:
         - name: DAOFactory
-          file: ./abis/DAOFactory.json
+          file: DAOFactory/abis/DAOFactory.json
       eventHandlers:
         - event: DeployDAO(address)
           handler: handleDeployDAO
-      file: ./src/mappings.ts
+      file: DAOFactory/DAOFactory.wasm
   - kind: ethereum/contract
     name: DAOFactory1
     network: rinkeby
     source:
-      address: '0xad4d106b43b480faa3ef7f98464ffc27fc1faa96'
+      address: "0xad4d106b43b480faa3ef7f98464ffc27fc1faa96"
       abi: DAOFactory
       startBlock: 5026118
     mapping:
@@ -39,16 +39,16 @@ dataSources:
         - Dummy
       abis:
         - name: DAOFactory
-          file: ./abis/DAOFactory.json
+          file: DAOFactory1/abis/DAOFactory.json
       eventHandlers:
         - event: DeployDAO(address)
           handler: handleDeployDAO
-      file: ./src/mappings.ts
+      file: DAOFactory/DAOFactory.wasm
   - kind: ethereum/contract
     name: DAOFactory2
     network: rinkeby
     source:
-      address: '0xfdef49fbfe37704af55636bdd4b6bc8cd19143f6'
+      address: "0xfdef49fbfe37704af55636bdd4b6bc8cd19143f6"
       abi: DAOFactory
       startBlock: 4221581
     mapping:
@@ -59,16 +59,16 @@ dataSources:
         - Dummy
       abis:
         - name: DAOFactory
-          file: ./abis/DAOFactory.json
+          file: DAOFactory2/abis/DAOFactory.json
       eventHandlers:
         - event: DeployDAO(address)
           handler: handleDeployDAO
-      file: ./src/mappings.ts
+      file: DAOFactory/DAOFactory.wasm
   - kind: ethereum/contract
     name: DAOFactory3
     network: rinkeby
     source:
-      address: '0x2298d27a9b847c681d2b2c2828ab9d79013f5f1d'
+      address: "0x2298d27a9b847c681d2b2c2828ab9d79013f5f1d"
       abi: DAOFactory
       startBlock: 3223971
     mapping:
@@ -79,11 +79,11 @@ dataSources:
         - Dummy
       abis:
         - name: DAOFactory
-          file: ./abis/DAOFactory.json
+          file: DAOFactory3/abis/DAOFactory.json
       eventHandlers:
         - event: DeployDAO(address)
           handler: handleDeployDAO
-      file: ./src/mappings.ts
+      file: DAOFactory/DAOFactory.wasm
 templates:
   - kind: ethereum/contract
     name: Kernel
@@ -98,8 +98,8 @@ templates:
         - Dummy
       abis:
         - name: Kernel
-          file: ./abis/Kernel.json
+          file: Kernel/abis/Kernel.json
       eventHandlers:
         - event: NewAppProxy(address,bool,bytes32)
           handler: handleNewAppProxy
-      file: ./src/mappings.ts
+      file: DAOFactory/DAOFactory.wasm
