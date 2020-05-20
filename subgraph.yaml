@@ -16,7 +16,7 @@ dataSources:
       apiVersion: 0.0.4
       language: wasm/assemblyscript
       entities:
-        - Dummy
+        - Organization
       abis:
         - name: DAOFactory
           file: ./abis/DAOFactory.json
@@ -36,7 +36,7 @@ dataSources:
       apiVersion: 0.0.4
       language: wasm/assemblyscript
       entities:
-        - Dummy
+        - Organization
       abis:
         - name: DAOFactory
           file: ./abis/DAOFactory.json
@@ -56,7 +56,7 @@ dataSources:
       apiVersion: 0.0.4
       language: wasm/assemblyscript
       entities:
-        - Dummy
+        - Organization
       abis:
         - name: DAOFactory
           file: ./abis/DAOFactory.json
@@ -76,7 +76,7 @@ dataSources:
       apiVersion: 0.0.4
       language: wasm/assemblyscript
       entities:
-        - Dummy
+        - Organization
       abis:
         - name: DAOFactory
           file: ./abis/DAOFactory.json
@@ -95,7 +95,7 @@ templates:
       apiVersion: 0.0.4
       language: wasm/assemblyscript
       entities:
-        - Dummy
+        - Organization
       abis:
         - name: Kernel
           file: ./abis/Kernel.json

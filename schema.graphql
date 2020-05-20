@@ -1,9 +1,18 @@
-type Dummy @entity {
+type Organization @entity {
   id: ID!
+  address: Bytes!
+  apps: [App]!
+}
+
+type App @entity {
+  id: ID!
+  address: Bytes!
+  org: Organization! @derivedFrom(field: "apps")
 }
 
 type Vote @entity {
   id: ID!
+  app: App!
   creator: Bytes!
   metadata: String!
   open: Boolean!

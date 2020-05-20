@@ -1,5 +1,5 @@
 #!/bin/bash
 
-NETWORK=$1
+DATA=$1
 
-mustache -p manifest/templates/daoFactory.template.yaml manifest/data/$NETWORK.json manifest/templates/subgraph.template.yaml > subgraph.yaml
+mustache -p manifest/templates/daoFactory.template.yaml manifest/data/$DATA.json manifest/templates/subgraph.template.yaml > subgraph.yaml
