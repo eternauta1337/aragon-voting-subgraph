@@ -17,4 +17,4 @@
     eventHandlers:
       - event: DeployDAO(address)
         handler: handleDeployDAO
-    file: ./src/mappings.ts
+    file: ./src/Org.ts

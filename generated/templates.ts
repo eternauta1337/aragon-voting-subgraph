@@ -15,3 +15,13 @@ export class Kernel extends DataSourceTemplate {
     DataSourceTemplate.createWithContext("Kernel", [address.toHex()], context);
   }
 }
+
+export class Voting extends DataSourceTemplate {
+  static create(address: Address): void {
+    DataSourceTemplate.create("Voting", [address.toHex()]);
+  }
+
+  static createWithContext(address: Address, context: DataSourceContext): void {
+    DataSourceTemplate.createWithContext("Voting", [address.toHex()], context);
+  }
+}
