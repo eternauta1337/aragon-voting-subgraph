@@ -3,14 +3,14 @@ import {
   StartVote as StartVoteEvent,
   CastVote as CastVoteEvent,
   ExecuteVote as ExecuteVoteEvent
-} from '../generated/templates/Voting/Voting'
+} from '../../generated/templates/Voting/Voting'
 import {
   Voting as VotingContract
-} from '../generated/templates/Voting/Voting'
+} from '../../generated/templates/Voting/Voting'
 import {
   Vote as VoteEntity,
   Cast as CastEntity,
-} from '../generated/schema'
+} from '../../generated/schema'
 
 function _getVoteEntityId(appAddress: Address, voteId: BigInt): string {
   return 'appAddress:' + appAddress.toHexString() + '-voteId:' + voteId.toHexString()

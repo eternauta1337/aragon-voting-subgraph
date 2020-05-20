@@ -25,7 +25,7 @@ templates:
       eventHandlers:
         - event: NewAppProxy(address,bool,bytes32)
           handler: handleNewAppProxy
-      file: ./src/App.ts
+      file: ./src/mappings/App.ts
   - kind: ethereum/contract
     name: Voting
     network: {{network}}
@@ -48,4 +48,4 @@ templates:
           handler: handleCastVote
         - event: ExecuteVote(indexed uint256)
           handler: handleExecuteVote
-      file: ./src/Voting.ts
+      file: ./src/mappings/Voting.ts
