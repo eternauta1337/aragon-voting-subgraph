@@ -25,7 +25,7 @@ templates:
       eventHandlers:
         - event: NewAppProxy(address,bool,bytes32)
           handler: handleNewAppProxy
-      file: ./src/mappings/App.ts
+      file: ./src/mappings/aragon/App.ts
   - kind: ethereum/contract
     name: Voting
     network: {{network}}

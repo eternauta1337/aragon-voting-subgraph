@@ -23,7 +23,7 @@ dataSources:
       eventHandlers:
         - event: DeployDAO(address)
           handler: handleDeployDAO
-      file: ./src/mappings/Org.ts
+      file: ./src/mappings/aragon/Org.ts
   - kind: ethereum/contract
     name: DAOFactory1
     network: rinkeby
@@ -43,7 +43,7 @@ dataSources:
       eventHandlers:
         - event: DeployDAO(address)
           handler: handleDeployDAO
-      file: ./src/mappings/Org.ts
+      file: ./src/mappings/aragon/Org.ts
   - kind: ethereum/contract
     name: DAOFactory2
     network: rinkeby
@@ -63,7 +63,7 @@ dataSources:
       eventHandlers:
         - event: DeployDAO(address)
           handler: handleDeployDAO
-      file: ./src/mappings/Org.ts
+      file: ./src/mappings/aragon/Org.ts
   - kind: ethereum/contract
     name: DAOFactory3
     network: rinkeby
@@ -83,7 +83,7 @@ dataSources:
       eventHandlers:
         - event: DeployDAO(address)
           handler: handleDeployDAO
-      file: ./src/mappings/Org.ts
+      file: ./src/mappings/aragon/Org.ts
 templates:
   - kind: ethereum/contract
     name: Kernel
@@ -102,7 +102,7 @@ templates:
       eventHandlers:
         - event: NewAppProxy(address,bool,bytes32)
           handler: handleNewAppProxy
-      file: ./src/mappings/App.ts
+      file: ./src/mappings/aragon/App.ts
   - kind: ethereum/contract
     name: Voting
     network: rinkeby
