@@ -1,3 +1,2 @@
-// Used for faster development.
 export const USE_ORG_WHITELIST = false
-export let ORG_WHITELIST: string[] = ['0xa03d32d7cbe602ec023bb9f032aba2787a5fe913']
+export let ORG_WHITELIST: string[] = ['0x7d42936f4903a31e486ec575f7d1a58925afdb3f']

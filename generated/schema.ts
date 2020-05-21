@@ -12,104 +12,6 @@ import {
   BigDecimal
 } from "@graphprotocol/graph-ts";
 
-export class Organization extends Entity {
-  constructor(id: string) {
-    super();
-    this.set("id", Value.fromString(id));
-  }
-
-  save(): void {
-    let id = this.get("id");
-    assert(id !== null, "Cannot save Organization entity without an ID");
-    assert(
-      id.kind == ValueKind.STRING,
-      "Cannot save Organization entity with non-string ID. " +
-        'Considering using .toHex() to convert the "id" to a string.'
-    );
-    store.set("Organization", id.toString(), this);
-  }
-
-  static load(id: string): Organization | null {
-    return store.get("Organization", id) as Organization | null;
-  }
-
-  get id(): string {
-    let value = this.get("id");
-    return value.toString();
-  }
-
-  set id(value: string) {
-    this.set("id", Value.fromString(value));
-  }
-
-  get address(): Bytes {
-    let value = this.get("address");
-    return value.toBytes();
-  }
-
-  set address(value: Bytes) {
-    this.set("address", Value.fromBytes(value));
-  }
-
-  get apps(): Array<string | null> {
-    let value = this.get("apps");
-    return value.toStringArray();
-  }
-
-  set apps(value: Array<string | null>) {
-    this.set("apps", Value.fromStringArray(value));
-  }
-}
-
-export class App extends Entity {
-  constructor(id: string) {
-    super();
-    this.set("id", Value.fromString(id));
-  }
-
-  save(): void {
-    let id = this.get("id");
-    assert(id !== null, "Cannot save App entity without an ID");
-    assert(
-      id.kind == ValueKind.STRING,
-      "Cannot save App entity with non-string ID. " +
-        'Considering using .toHex() to convert the "id" to a string.'
-    );
-    store.set("App", id.toString(), this);
-  }
-
-  static load(id: string): App | null {
-    return store.get("App", id) as App | null;
-  }
-
-  get id(): string {
-    let value = this.get("id");
-    return value.toString();
-  }
-
-  set id(value: string) {
-    this.set("id", Value.fromString(value));
-  }
-
-  get address(): Bytes {
-    let value = this.get("address");
-    return value.toBytes();
-  }
-
-  set address(value: Bytes) {
-    this.set("address", Value.fromBytes(value));
-  }
-
-  get org(): string {
-    let value = this.get("org");
-    return value.toString();
-  }
-
-  set org(value: string) {
-    this.set("org", Value.fromString(value));
-  }
-}
-
 export class Vote extends Entity {
   constructor(id: string) {
     super();
@@ -140,13 +42,22 @@ export class Vote extends Entity {
     this.set("id", Value.fromString(value));
   }
 
-  get app(): string {
-    let value = this.get("app");
-    return value.toString();
+  get orgAddress(): Bytes {
+    let value = this.get("orgAddress");
+    return value.toBytes();
   }
 
-  set app(value: string) {
-    this.set("app", Value.fromString(value));
+  set orgAddress(value: Bytes) {
+    this.set("orgAddress", Value.fromBytes(value));
+  }
+
+  get appAddress(): Bytes {
+    let value = this.get("appAddress");
+    return value.toBytes();
+  }
+
+  set appAddress(value: Bytes) {
+    this.set("appAddress", Value.fromBytes(value));
   }
 
   get creator(): Bytes {

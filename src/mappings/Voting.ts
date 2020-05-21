@@ -39,7 +39,8 @@ export function handleStartVote(event: StartVoteEvent): void {
   vote.nay = voteData.value7
   vote.votingPower = voteData.value8
   vote.script = voteData.value9
-  vote.app = appAddress.toHexString()
+  vote.orgAddress = voting.kernel()
+  vote.appAddress = appAddress
 
   vote.executed = false
   vote.casts = []
